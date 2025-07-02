@@ -42,7 +42,7 @@ app_ui = ui.page_sidebar(
         ui.output_data_frame("penguins_grid")
     ),
 
-    # Layout with 3 visualizations side-by-side
+    # Layout with 2 visualizations side-by-side & 1 fullscreen beneath
     ui.layout_columns(
         ui.card(
             ui.card_header("Plotly Histogram"),
@@ -116,8 +116,8 @@ def server(input, output, session):
         
         fig = px.scatter(
             df,
-            x=selected_attr,              # Use selected attribute for x-axis
-            y="body_mass_g",              # Keep y-axis static or make it dynamic if desired
+            x=selected_attr,              
+            y="body_mass_g",              
             color="species",
             symbol="species",
             size="bill_length_mm",
